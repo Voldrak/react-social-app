@@ -14,7 +14,7 @@ const MessagePreview = (props) => {
         <div className={styles.message}>
             <h5>{data.sender}</h5>
             <p><small>
-            <DateTime distance={data.date} /> 
+            <DateTime relative={data.date} /> 
 
                     </small></p>
             <p>{data.text}</p>

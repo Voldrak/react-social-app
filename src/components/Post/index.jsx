@@ -17,7 +17,7 @@ const Post = (props) => {
             <p>
                 <small>
 
-                    <DateTime distance={data.date} /> 
+                    <DateTime relative={data.date} /> 
                 </small>
             </p>
             <p>{data.text}</p>
