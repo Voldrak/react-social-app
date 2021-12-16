@@ -1,3 +1,5 @@
+import { formatDistance } from 'date-fns';
+import { it } from 'date-fns/locale';
 import styles from './Post.module.scss';
 
 const Post = (props) => {
@@ -9,13 +11,15 @@ const Post = (props) => {
     };
 
 
-
     return (
         <article className={styles.post}>
             <h3>{data.author}</h3>
             <p>
                 <small>
-                {data.date.toLocaleDateString()} - {data.date.toLocaleTimeString()}
+                {formatDistance(new Date(data.date), new Date(), {
+                    addSuffix: true,
+                    locale: it,
+                    })}
                 </small>
             </p>
             <p>{data.text}</p>
