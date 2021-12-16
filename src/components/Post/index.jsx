@@ -1,5 +1,5 @@
-import { formatDistance } from 'date-fns';
-import { it } from 'date-fns/locale';
+
+import { DateTime } from './../DateTime/index'
 import styles from './Post.module.scss';
 
 const Post = (props) => {
@@ -16,10 +16,8 @@ const Post = (props) => {
             <h3>{data.author}</h3>
             <p>
                 <small>
-                {formatDistance(new Date(data.date), new Date(), {
-                    addSuffix: true,
-                    locale: it,
-                    })}
+
+                    <DateTime distance={data.date} /> 
                 </small>
             </p>
             <p>{data.text}</p>
