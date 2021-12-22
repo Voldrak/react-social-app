@@ -1,17 +1,20 @@
 @import "./../../libs/variables.scss";
 
-.friend{
-    display: flex;
-    
-    img{
-        width: 70px;
-        height: 70px;
+.friend {
+  $size: 60px;
 
-        border-radius: 50%;
+  display: flex;
 
-        p{
-            line-height: 70px;
-            margin: 0;
-        }
-    }
+  img {
+    width: $size;
+    height: $size;
+
+    border-radius: 50%;
+  }
+
+  p {
+    line-height: $size;
+    margin: 0;
+    margin-left: 10px;
+  }
 }

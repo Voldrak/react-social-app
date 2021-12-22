@@ -1,23 +1,35 @@
-import Header from "./components/Header/index";
-import Footer from "./components/Footer/index";
-import Home from "./pages/Home/index.jsx";
+import { Routes, Route } from "react-router-dom";
+
+import Footer from "./components/Footer";
+import NewPost from "./pages/NewPost";
+import Messages from "./pages/Messages";
+import Friends from "./pages/Friends";
+import Login from "./components/Login";
+
+import Home from "./pages/Home";
+
 
 function App() {
-  const name = "Feisbrut";
-  const nav= [
-    {link:"/", label: "Home"},
-    {link:"/Friends", label: "Friends"},
-    {link:"/Messages", label: "Messages"},
-];
 
   return (
     <div>
-      <Header name={name} links={nav} />
-      <Home />
-      <Footer />
       
+<Login />
+      
+      
+
+      <Routes>
+      
+        {/* <Route path="/login" element={<Login />}/> */}
+        <Route path="/" element={<Home />} />
+        <Route path="/new-post" element={<NewPost />} />
+        <Route path="/messages" element={<Messages />} />
+        <Route path="/friends" element={<Friends />} />
+      </Routes>
+
+      <Footer />
     </div>
   );
-}
+  }
 
 export default App;
